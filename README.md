@@ -1,8 +1,16 @@
 # AAS Tecnologia
 
-Site institucional desenvolvido para a **AAS Tecnologia**, projeto voltado à criação de soluções digitais e presença profissional na web.
+Site institucional desenvolvido para a **AAS Tecnologia**, projeto voltado à criação de soluções digitais, desenvolvimento web e presença profissional na internet.
 
 O projeto foi desenvolvido com foco em uma interface moderna, responsiva e comercial, apresentando serviços, projetos realizados e canais de contato de forma clara e objetiva.
+
+## 🌐 Projeto online
+
+🚀 **Veja o projeto funcionando:**
+
+👉 [Acessar AAS Tecnologia](https://alisson0408.github.io/aas-tecnologia-site/)
+
+---
 
 ## 🚀 Sobre o projeto
 
@@ -14,45 +22,63 @@ Entre os principais objetivos do projeto estão:
 - Divulgação de serviços
 - Exposição de projetos desenvolvidos
 - Integração com canais de atendimento
-- Experiência responsiva para diferentes dispositivos
-- Estrutura voltada à conversão de visitantes em potenciais clientes
+- Navegação simples e responsiva
+- Experiência otimizada para computadores e dispositivos móveis
+- Direcionamento do visitante para contato e solicitação de orçamento
+
+---
 
 ## 💻 Tecnologias utilizadas
+
+O projeto foi desenvolvido utilizando:
 
 - HTML5
 - CSS3
 - JavaScript
 - Git
 - GitHub
+- GitHub Pages
 - Visual Studio Code
 
-## ⚙️ Funcionalidades
-
-- Layout responsivo
-- Navegação entre seções
-- Apresentação institucional
-- Portfólio de projetos
-- Botões de chamada para ação (CTA)
-- Integração com WhatsApp
-- Links para redes sociais
-- Estrutura adaptada para dispositivos móveis
-
-## 🎯 Objetivo técnico
-
-Este projeto também faz parte do meu portfólio profissional de desenvolvimento web, demonstrando conhecimentos práticos em construção de interfaces, organização de projetos, responsividade, versionamento com Git e publicação de aplicações web.
-
-## 👨‍💻 Desenvolvedor
-
-**Alisson Antônio da Silva**
-
-Profissional de TI com experiência em Service Desk e Suporte Técnico, atualmente ampliando sua atuação em Computação em Nuvem, Desenvolvimento Web e Inteligência Artificial Generativa.
-
-## 📫 Contato
-
-**E-mail:** aasilva84@outlook.com  
-**Telefone / WhatsApp:** (34) 98858-6329  
-**Localização:** Uberlândia - MG, Brasil
+Também foram utilizadas ferramentas de **Inteligência Artificial Generativa** como apoio ao processo de desenvolvimento, análise de código, estruturação de conteúdo, produtividade e aprimoramento da interface.
 
 ---
 
-### AAS Tecnologia — Tecnologia aplicada a soluções digitais.
+## ⚙️ Funcionalidades
+
+O site possui recursos como:
+
+- Layout responsivo
+- Menu de navegação
+- Seções institucionais
+- Apresentação de serviços
+- Portfólio de projetos
+- Botões de chamada para ação (CTA)
+- Integração com WhatsApp
+- Área de contato
+- Interface adaptada para diferentes tamanhos de tela
+
+---
+
+## 🎯 Objetivo do projeto
+
+Este projeto demonstra conhecimentos práticos em desenvolvimento web front-end, estruturação de interfaces digitais e publicação de aplicações web.
+
+O desenvolvimento envolveu desde a organização da estrutura HTML até a estilização, implementação de interações em JavaScript, versionamento com Git e publicação utilizando GitHub Pages.
+
+---
+
+## 📂 Estrutura do projeto
+
+```text
+aas-tecnologia-site/
+│
+├── ativos/
+│   └── imagens/
+│
+├── projetos/
+│
+├── index.html
+├── estilo.css
+├── main.js
+└── README.md
