@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ==========================================================================
+       SITE INSTITUCIONAL — ADVOCACIA  ·  PROJETO DEMONSTRATIVO
+       --------------------------------------------------------------------------
+       IMPORTANTE: todo texto entre [COLCHETES] é um PLACEHOLDER.
+       Substitua pelos dados reais da advogada antes de publicar o site.
+       Os pontos que precisam de informação real estão marcados ao longo do
+       arquivo com o comentário "SUBSTITUIR:".
+
+       Estrutura do projeto:  index.html  |  style.css  |  main.js  |  assets/img/
+       ========================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===================== SEO — SUBSTITUIR: nome e cidade ==================== -->
+  <title>[NOME DA ADVOGADA] | Advocacia e Consultoria Jurídica — [CIDADE/UF]</title>
+  <meta name="description"
+    content="Atuação jurídica com técnica, discrição e clareza. [NOME DA ADVOGADA] — [OAB/UF 000000]. Atendimento personalizado em [CIDADE/UF], nas áreas de Direito Civil, Família, Consumidor, Empresarial e Trabalhista." />
+  <meta name="author" content="[NOME DA ADVOGADA]" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0B1220" />
+  <!-- SUBSTITUIR: domínio real do site -->
+  <link rel="canonical" href="https://[SEU-DOMINIO].com.br/" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+
+  <!-- ===================== Open Graph / redes sociais ========================
+       SUBSTITUIR: og:url, og:image (ideal: JPG ou PNG 1200x630 px) e os textos. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="[NOME DA ADVOGADA] — Advocacia" />
+  <meta property="og:title" content="[NOME DA ADVOGADA] | Advocacia e Consultoria Jurídica" />
+  <meta property="og:description"
+    content="Atendimento jurídico com técnica, discrição e clareza em [CIDADE/UF]. Conheça as áreas de atuação e agende um atendimento." />
+  <meta property="og:url" content="https://[SEU-DOMINIO].com.br/" />
+  <meta property="og:image" content="assets/img/og-cover.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Identidade visual institucional do escritório de advocacia" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[NOME DA ADVOGADA] | Advocacia e Consultoria Jurídica" />
+  <meta name="twitter:description"
+    content="Atendimento jurídico com técnica, discrição e clareza em [CIDADE/UF]." />
+  <meta name="twitter:image" content="assets/img/og-cover.svg" />
+
+  <!-- Tipografia institucional (serifada clássica + sans humanista) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ==========================================================================
+       DADOS ESTRUTURADOS (schema.org) — MODELO PRONTO PARA PREENCHIMENTO
+       Descomente e preencha com os dados reais quando estiverem disponíveis.
+       Não publique dados fictícios: nome, endereço, telefone, avaliações e
+       prêmios devem corresponder exatamente à realidade do escritório.
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "name": "[NOME DA ADVOGADA]",
+    "description": "Advocacia e consultoria jurídica em [CIDADE/UF].",
+    "url": "https://[SEU-DOMINIO].com.br/",
+    "image": "https://[SEU-DOMINIO].com.br/assets/img/foto-advogada.jpg",
+    "telephone": "[TELEFONE COM DDD]",
+    "email": "[E-MAIL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[ENDEREÇO]",
+      "addressLocality": "[CIDADE]",
+      "addressRegion": "[UF]",
+      "postalCode": "[CEP]",
+      "addressCountry": "BR"
+    },
+    "areaServed": "[CIDADE/UF]"
+  }
+  </script>
+       ========================================================================== -->
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <!-- ==========================================================================
+       CABEÇALHO / NAVEGAÇÃO PRINCIPAL
+       SUBSTITUIR: nome institucional e subtítulo do logotipo.
+       As âncoras do menu apontam para as seções desta mesma página.
+       ========================================================================== -->
+  <header class="site-header" data-header>
+    <!-- Camada de fundo (desfoque/translucidez). Fica separada para que o
+         cabeçalho não crie um "containing block" que afetaria o menu mobile. -->
+    <div class="site-header__bg" aria-hidden="true"></div>
+    <div class="container site-header__inner">
+
+      <a class="brand" href="#inicio" aria-label="[NOME DA ADVOGADA], advocacia e consultoria jurídica — voltar ao início">
+        <span class="brand__mark" aria-hidden="true">§</span>
+        <span class="brand__text">
+          <span class="brand__name">[NOME DA ADVOGADA]</span>
+          <span class="brand__role">Advocacia e Consultoria Jurídica</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
+        aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="menu-toggle__label">Menu</span>
+      </button>
+
+      <nav class="nav" id="menu-principal" data-menu aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#areas">Áreas de Atuação</a></li>
+          <li><a class="nav__link" href="#diferenciais">Diferenciais</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+          <li class="nav__item-cta">
+            <a class="btn btn--gold btn--sm" href="#contato">Falar com a advogada</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="nav-backdrop" data-menu-backdrop hidden></div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ========================================================================
+         HERO / ABERTURA
+         SUBSTITUIR: [NOME DA ADVOGADA], [OAB/UF 000000] e [CIDADE/UF].
+         Os textos abaixo são genéricos e não prometem resultados jurídicos.
+         ======================================================================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow eyebrow--light">
+            <span class="eyebrow__rule" aria-hidden="true"></span>
+            Advocacia e Consultoria Jurídica
+          </p>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-name">[NOME DA ADVOGADA]</span>
+            <span class="hero__title-statement">Atuação jurídica com técnica, discrição e clareza.</span>
+          </h1>
+
+          <p class="hero__text">
+            Um atendimento jurídico conduzido com seriedade, escuta atenta e comunicação
+            transparente — do primeiro contato à definição dos próximos passos.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--gold" href="#contato">
+              Solicitar atendimento
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a class="btn btn--outline-light" href="#areas">Áreas de atuação</a>
+          </div>
+
+          <!-- SUBSTITUIR: dados de identificação e modalidade de atendimento -->
+          <ul class="hero__meta">
+            <li><strong>Inscrição</strong><span>[OAB/UF 000000]</span></li>
+            <li><strong>Atendimento</strong><span>Presencial em [CIDADE/UF] e on-line</span></li>
+            <li><strong>Compromisso</strong><span>Sigilo profissional</span></li>
+          </ul>
+        </div>
+
+        <!-- SUBSTITUIR: substituir assets/img/foto-advogada.svg pela fotografia
+             profissional real (proporção 4:5, ex.: 800x1000 px, formato WebP/JPG) -->
+        <aside class="hero__aside">
+          <figure class="hero__figure">
+            <img src="assets/img/foto-advogada.svg" width="800" height="1000" decoding="async"
+              alt="Espaço reservado para a fotografia profissional de [NOME DA ADVOGADA]" />
+          </figure>
+          <p class="hero__figure-note">Imagem ilustrativa — substituir pela fotografia profissional.</p>
+        </aside>
+      </div>
+
+      <div class="container">
+        <ul class="hero__strip" aria-label="Aspectos do atendimento jurídico">
+          <li>Análise individual de cada caso</li>
+          <li>Linguagem acessível</li>
+          <li>Condução ética e responsável</li>
+          <li>Informação clara sobre cada etapa</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SEÇÃO SOBRE
+         SUBSTITUIR: fotografia, nome, OAB, formação, especializações e o texto
+         de apresentação pessoal. Os campos abaixo estão vazios de conteúdo real
+         de propósito — nada foi inventado.
+         ======================================================================== -->
+    <section class="section about" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about__grid">
+
+        <div class="about__media reveal">
+          <figure class="portrait">
+            <!-- SUBSTITUIR: assets/img/foto-advogada.svg pela fotografia real -->
+            <img src="assets/img/foto-advogada.svg" width="800" height="1000" loading="lazy" decoding="async"
+              alt="Espaço reservado para a fotografia profissional de [NOME DA ADVOGADA]" />
+          </figure>
+          <p class="portrait__caption">Espaço reservado para a fotografia institucional.</p>
+        </div>
+
+        <div class="about__content">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Sobre</p>
+          <h2 id="sobre-title">Advocacia construída sobre confiança, técnica e responsabilidade</h2>
+
+          <p class="about__lead">
+            Este espaço é destinado à apresentação institucional do escritório. Aqui você poderá
+            descrever a trajetória profissional, a abordagem de trabalho e o compromisso com um
+            atendimento jurídico sério, reservado e transparente.
+          </p>
+
+          <!-- SUBSTITUIR: cada item abaixo deve receber a informação real -->
+          <dl class="facts">
+            <div class="facts__row">
+              <dt>Nome</dt>
+              <dd><span class="ph">[NOME DA ADVOGADA]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Inscrição na OAB</dt>
+              <dd><span class="ph">[OAB/UF 000000]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Formação</dt>
+              <dd><span class="ph">[FORMAÇÃO ACADÊMICA — instituição e ano de conclusão]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Especializações</dt>
+              <dd><span class="ph">[PÓS-GRADUAÇÕES, CURSOS E ÁREAS DE APROFUNDAMENTO]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Atuação</dt>
+              <dd><span class="ph">[ÁREAS E REGIÕES DE ATUAÇÃO]</span></dd>
+            </div>
+          </dl>
+
+          <div class="about__text">
+            <h3 class="about__subtitle">Apresentação pessoal</h3>
+            <!-- SUBSTITUIR: texto de apresentação pessoal redigido pela advogada -->
+            <p class="ph ph--block">
+              [APRESENTAÇÃO PESSOAL — texto de aproximadamente dois a três parágrafos, descrevendo a
+              trajetória, a filosofia de trabalho e o tipo de atendimento oferecido.]
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         ÁREAS DE ATUAÇÃO  ·  CONTEÚDO DEMONSTRATIVO
+         ------------------------------------------------------------------------
+         >>> ALTERAR AS ÁREAS AQUI <<<
+         As seis áreas abaixo são EXEMPLOS para demonstração visual do layout.
+         Substitua pelos ramos de atuação reais da advogada:
+            1) troque o título (<h3 class="card__title">);
+            2) troque o texto (<p class="card__text">);
+            3) opcionalmente troque o ícone (svg dentro de .card__icon);
+            4) se forem menos itens, remova o <li> completo de cada área não usada;
+            5) atualize também a lista do formulário de contato (seção CONTATO).
+         ======================================================================== -->
+    <section class="section areas" id="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Áreas de atuação</p>
+          <h2 id="areas-title">Atuação jurídica organizada por áreas do Direito</h2>
+          <p class="section__intro">
+            Conhecer a área adequada é o primeiro passo para uma orientação jurídica consistente.
+            As áreas abaixo são apresentadas de forma exemplificativa e serão confirmadas de acordo
+            com a atuação real do escritório.
+          </p>
+          <p class="notice" role="note">
+            Conteúdo demonstrativo: os itens desta seção são exemplos de estrutura e devem ser
+            substituídos pelas áreas de atuação efetivamente prestadas.
+          </p>
+        </header>
+
+        <ul class="cards">
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3v18M8 21h8M12 5.5 5.5 8M12 5.5 18.5 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8 2.5 14a3 3 0 0 0 6 0L5.5 8ZM18.5 8l-3 6a3 3 0 0 0 6 0l-3-6Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="card__title">Direito Civil</h3>
+            <p class="card__text">
+              Demandas envolvendo contratos, obrigações, responsabilidade civil, direitos reais e
+              questões patrimoniais em geral.
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="9.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 20a6 6 0 0 1 12 0M15.4 20a4.6 4.6 0 0 1 5.6-4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="card__title">Direito de Família</h3>
+            <p class="card__text">
+              Assuntos familiares tratados com sensibilidade e discrição, respeitando o contexto e
+              os vínculos envolvidos.
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M6 8h12l1 12H5L6 8Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 8a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="card__title">Direito do Consumidor</h3>
+            <p class="card__text">
+              Relações de consumo, análise de contratos e orientação sobre direitos e deveres das
+              partes envolvidas.
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="8" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="card__title">Direito Empresarial</h3>
+            <p class="card__text">
+              Apoio jurídico a empresas e profissionais em questões contratuais, societárias e de
+              rotina negocial.
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="card__title">Direito Trabalhista</h3>
+            <p class="card__text">
+              Orientações e demandas decorrentes das relações de trabalho, sob a perspectiva de
+              quem contrata ou de quem presta serviços.
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v6c0 4.4-2.9 7.4-7 9-4.1-1.6-7-4.6-7-9V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.3 12.2l1.9 1.9 3.6-3.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="card__title">Consultoria Jurídica</h3>
+            <p class="card__text">
+              Pareceres e orientações preventivas para decisões mais seguras, com análise técnica
+              de riscos e alternativas.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         DIFERENCIAIS
+         Conceitos institucionais e genéricos (como o atendimento é conduzido).
+         Não há afirmações factuais sobre prêmios, números ou resultados.
+         SUBSTITUIR (opcional): ajustar a redação para o padrão de comunicação
+         definido pela advogada.
+         ======================================================================== -->
+    <section class="section section--tint diferenciais" id="diferenciais" aria-labelledby="diferenciais-title">
+      <div class="container diferenciais__grid">
+
+        <header class="section__head section__head--left reveal">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Diferenciais</p>
+          <h2 id="diferenciais-title">Como o atendimento é conduzido</h2>
+          <p class="section__intro">
+            Princípios que orientam a prática jurídica e a relação com cada pessoa atendida — da
+            primeira conversa ao acompanhamento das etapas seguintes.
+          </p>
+        </header>
+
+        <ul class="features">
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="10" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M4 20a6 6 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M17 11.5l1.6 1.6L22 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Atendimento personalizado</h3>
+              <p class="feature__text">
+                Cada situação é analisada de forma individual, considerando o contexto, as
+                particularidades e os objetivos de quem procura o escritório.
+              </p>
+            </div>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H9l-5 4V5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Comunicação clara</h3>
+              <p class="feature__text">
+                Explicações em linguagem acessível, sem excesso de termos técnicos, para que as
+                decisões sejam tomadas com segurança e entendimento.
+              </p>
+            </div>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15 15l5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Análise cuidadosa</h3>
+              <p class="feature__text">
+                Estudo atento de documentos, prazos e circunstâncias, para identificar riscos,
+                possibilidades e alternativas antes de qualquer definição.
+              </p>
+            </div>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-4.6 7-10V6l-7-3-7 3v5c0 5.4 7 10 7 10Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.2 11.8l2 2 3.6-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Acompanhamento</h3>
+              <p class="feature__text">
+                Informações sobre o andamento de cada etapa, para que você saiba em que ponto a
+                situação se encontra e o que vem na sequência.
+              </p>
+            </div>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.5 4.5 7 12 10.5 19.5 7 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 10.5 12 14l6.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 14 12 17.5 18.5 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Ética e transparência</h3>
+              <p class="feature__text">
+                Conduta pautada pelo Código de Ética e Disciplina da OAB, com orientações honestas
+                sobre limites, possibilidades e deveres de cada parte.
+              </p>
+            </div>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 14.2v2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Confidencialidade</h3>
+              <p class="feature__text">
+                Tratamento reservado das informações compartilhadas, em observância ao sigilo
+                profissional que rege a advocacia.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PROCESSO DE ATENDIMENTO
+         Descrição genérica das etapas de trabalho. Não há promessa de resultado.
+         SUBSTITUIR (opcional): adaptar a descrição das etapas ao fluxo real
+         adotado pelo escritório.
+         ======================================================================== -->
+    <section class="section steps-section" id="processo" aria-labelledby="processo-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Processo de atendimento</p>
+          <h2 id="processo-title">Quatro etapas para entender e organizar a sua situação</h2>
+          <p class="section__intro">
+            Um percurso simples e transparente, para que você saiba o que esperar em cada momento
+            do atendimento.
+          </p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3 class="step__title">Contato inicial</h3>
+            <p class="step__text">
+              Você entra em contato pelo canal de sua preferência e relata, de forma breve, o
+              assunto que deseja tratar. A partir daí, é agendado o atendimento.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3 class="step__title">Entendimento da situação</h3>
+            <p class="step__text">
+              Em conversa reservada, são levantados os fatos relevantes, os documentos disponíveis
+              e o histórico do caso, com atenção ao contexto de cada pessoa.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3 class="step__title">Análise jurídica</h3>
+            <p class="step__text">
+              O caso é estudado à luz da legislação, da jurisprudência e das particularidades
+              apresentadas, para identificar caminhos possíveis, riscos e limitações.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">04</span>
+            <h3 class="step__title">Orientação sobre os próximos passos</h3>
+            <p class="step__text">
+              Você recebe uma orientação objetiva sobre as alternativas disponíveis e o que pode
+              ser feito a seguir, com espaço para esclarecer dúvidas antes de decidir.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         DEPOIMENTOS — SEÇÃO DESATIVADA (AGUARDANDO CONTEÚDO REAL)
+         ------------------------------------------------------------------------
+         A seção está oculta pelo atributo `hidden` de propósito: NÃO foram
+         inventados depoimentos, nomes, notas ou avaliações.
+
+         >>> COMO ATIVAR:
+             1) remova o atributo `hidden` da tag <section> abaixo;
+             2) substitua os três cartões-modelo pelos depoimentos reais;
+             3) obtenha e registre a autorização de quem depõe (uso de nome e
+                imagem), conforme a LGPD.
+
+         Observação: a publicidade na advocacia é disciplinada pelo Código de
+         Ética e Disciplina da OAB e pelo Provimento nº 205/2021 do Conselho
+         Federal da OAB — o conteúdo deve ter caráter informativo, sem promessa
+         de resultado e sem captação de causas.
+         ======================================================================== -->
+    <section class="section testimonials" id="depoimentos" aria-labelledby="depoimentos-title" hidden>
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Depoimentos</p>
+          <h2 id="depoimentos-title">Relatos de quem já foi atendido</h2>
+          <p class="section__intro">
+            Espaço reservado para depoimentos reais, publicados somente com autorização expressa
+            das pessoas atendidas.
+          </p>
+        </header>
+
+        <ul class="testimonials__list">
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p class="ph ph--block">[DEPOIMENTO 1 — texto real e autorizado, sem promessa de resultado]</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <span class="ph">[NOME OU INICIAIS]</span>
+              <span class="ph">[CONTEXTO — área relacionada / cidade / ano]</span>
+            </footer>
+          </li>
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p class="ph ph--block">[DEPOIMENTO 2 — texto real e autorizado, sem promessa de resultado]</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <span class="ph">[NOME OU INICIAIS]</span>
+              <span class="ph">[CONTEXTO — área relacionada / cidade / ano]</span>
+            </footer>
+          </li>
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p class="ph ph--block">[DEPOIMENTO 3 — texto real e autorizado, sem promessa de resultado]</p>
+            </blockquote>
+            <footer class="testimonial__author">
+              <span class="ph">[NOME OU INICIAIS]</span>
+              <span class="ph">[CONTEXTO — área relacionada / cidade / ano]</span>
+            </footer>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTATO
+         SUBSTITUIR todos os placeholders pelos dados reais de contato:
+         [WHATSAPP], [E-MAIL], [INSTAGRAM], [ENDEREÇO] e [CIDADE/UF].
+         Os valores aparecem como texto (não clicáveis) de propósito, pois ainda
+         não existem dados reais. Ao preenchê-los, transforme cada valor em link
+         (tel:, mailto:, https://instagram.com/...) e remova a classe "ph".
+         ======================================================================== -->
+    <section class="section contato" id="contato" aria-labelledby="contato-title">
+      <div class="container contato__grid">
+
+        <div class="contato__info">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__rule" aria-hidden="true"></span>Contato</p>
+          <h2 id="contato-title">Vamos conversar sobre a sua situação</h2>
+          <p class="contato__text">
+            Escolha o canal de sua preferência para agendar um atendimento ou esclarecer dúvidas
+            iniciais. As informações compartilhadas são tratadas com confidencialidade.
+          </p>
+
+          <ul class="contact-list">
+            <li class="contact-list__item">
+              <span class="contact-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.9.53 3.68 1.46 5.2L2 22l5.1-1.6a9.8 9.8 0 0 0 4.94 1.33c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm0 17.86c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.02.95.95-2.94-.2-.32a7.95 7.95 0 0 1-1.23-4.26c0-4.42 3.6-8.02 8.02-8.02s8 3.6 8 8.02-3.6 7.96-7.83 7.96Zm4.5-5.9c-.24-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.19-.53.06-.24-.12-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.38-1.72-.15-.24-.02-.38.1-.5.12-.13.28-.33.42-.49.14-.17.19-.28.28-.47.1-.19.05-.35-.02-.5-.06-.12-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38h-.48c-.16 0-.42.06-.64.3-.22.25-.83.82-.83 1.99 0 1.18.85 2.31.97 2.47.12.17 1.63 2.5 3.96 3.5.55.24.98.38 1.32.49.55.17 1.05.15 1.45.09.44-.07 1.35-.55 1.54-1.09.19-.53.19-.99.13-1.08-.06-.1-.22-.16-.46-.28Z"/></svg>
+              </span>
+              <span class="contact-list__body">
+                <span class="contact-list__label">WhatsApp</span>
+                <!-- SUBSTITUIR: [WHATSAPP] — formato exibido: (00) 00000-0000 -->
+                <span class="contact-list__value ph">[WHATSAPP]</span>
+                <span class="contact-list__hint">Canal principal para agendamentos</span>
+              </span>
+            </li>
+
+            <li class="contact-list__item">
+              <span class="contact-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m3.6 6.4 8.4 6.2 8.4-6.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="contact-list__body">
+                <span class="contact-list__label">E-mail</span>
+                <!-- SUBSTITUIR: [E-MAIL] — depois envolver em <a href="mailto:..."> -->
+                <span class="contact-list__value ph">[E-MAIL]</span>
+                <span class="contact-list__hint">Envio de documentos e detalhes do caso</span>
+              </span>
+            </li>
+
+            <li class="contact-list__item">
+              <span class="contact-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+              </span>
+              <span class="contact-list__body">
+                <span class="contact-list__label">Instagram</span>
+                <!-- SUBSTITUIR: [INSTAGRAM] — formato de exibição: @usuario -->
+                <span class="contact-list__value ph">[INSTAGRAM]</span>
+                <span class="contact-list__hint">Conteúdos informativos sobre temas jurídicos</span>
+              </span>
+            </li>
+
+            <li class="contact-list__item">
+              <span class="contact-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s6.5-5.6 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="10.4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+              <span class="contact-list__body">
+                <span class="contact-list__label">Endereço</span>
+                <!-- SUBSTITUIR: [ENDEREÇO] e [CIDADE/UF] -->
+                <span class="contact-list__value ph">[ENDEREÇO]</span>
+                <span class="contact-list__hint ph">[CIDADE/UF] — atendimento presencial com agendamento</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contato__form-wrap">
+          <!-- ======================================================================
+               FORMULÁRIO DE CONTATO (DEMONSTRATIVO)
+               O envio ainda não está conectado: não há serviço de e-mail/formulário
+               configurado e nenhum dado é transmitido. Quando o contato real for
+               definido, configure o atributo `action`/`method` do <form> (ou um
+               serviço de formulários) e ajuste a função em main.js (seção 7).
+               ====================================================================== -->
+          <form class="contact-form" data-contact-form>
+            <h3 class="contact-form__title">Enviar uma mensagem</h3>
+
+            <div class="field">
+              <label class="field__label" for="nome">Nome completo <span class="field__req" aria-hidden="true">*</span></label>
+              <input class="field__input" type="text" id="nome" name="nome" autocomplete="name"
+                placeholder="Como você gostaria de ser chamado(a)" required />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="email">E-mail <span class="field__req" aria-hidden="true">*</span></label>
+                <input class="field__input" type="email" id="email" name="email" autocomplete="email"
+                  placeholder="seu@email.com" required />
+              </div>
+              <div class="field">
+                <label class="field__label" for="telefone">Telefone/WhatsApp</label>
+                <input class="field__input" type="tel" id="telefone" name="telefone" autocomplete="tel"
+                  placeholder="(00) 00000-0000" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="assunto">Assunto de interesse</label>
+              <!-- SUBSTITUIR: manter as opções alinhadas às áreas de atuação reais -->
+              <select class="field__input field__select" id="assunto" name="assunto">
+                <option value="">Selecione uma opção</option>
+                <option value="civil">Direito Civil</option>
+                <option value="familia">Direito de Família</option>
+                <option value="consumidor">Direito do Consumidor</option>
+                <option value="empresarial">Direito Empresarial</option>
+                <option value="trabalhista">Direito Trabalhista</option>
+                <option value="consultoria">Consultoria Jurídica</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="mensagem">Mensagem <span class="field__req" aria-hidden="true">*</span></label>
+              <textarea class="field__input field__textarea" id="mensagem" name="mensagem" rows="5"
+                placeholder="Descreva brevemente a sua situação, sem incluir dados sensíveis."
+                required></textarea>
+            </div>
+
+            <div class="field field--check">
+              <input class="field__check" type="checkbox" id="consentimento" name="consentimento" required />
+              <label class="field__check-label" for="consentimento">
+                Autorizo o contato e o tratamento dos dados informados para fins de atendimento,
+                nos termos da Lei Geral de Proteção de Dados (LGPD).
+              </label>
+            </div>
+
+            <button class="btn btn--gold btn--block" type="submit" data-form-submit>
+              Enviar mensagem
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <p class="form-note">
+              Resposta em horário comercial. O envio de informações não estabelece, por si só,
+              relação de contratação ou de patrocínio.
+            </p>
+
+            <!-- Mensagem de status exibida pelo JavaScript (acessível via aria-live) -->
+            <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         LOCALIZAÇÃO / MAPA
+         Nenhum endereço real foi informado, portanto NÃO há mapa embutido nem
+         coordenadas inventadas. O bloco abaixo é um espaço reservado.
+
+         >>> COMO ATIVAR O MAPA (quando o endereço real estiver definido):
+             1) abra o Google Maps, busque o endereço e use "Compartilhar >
+                Incorporar um mapa" para copiar o <iframe>;
+             2) substitua o <div class="map-placeholder"> pelo iframe copiado,
+                mantendo width="100%", height="420" e o atributo
+                loading="lazy";
+             3) siga o modelo comentado logo abaixo.
+         ======================================================================== -->
+    <section class="section local" id="localizacao" aria-labelledby="local-title">
+      <div class="container local__grid">
+
+        <div class="local__content reveal">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Localização</p>
+          <h2 id="local-title">Atendimento presencial com agendamento prévio</h2>
+          <p class="section__intro">
+            Para garantir privacidade e dedicação a cada atendimento, as reuniões presenciais são
+            realizadas mediante agendamento. Também é possível ser atendido de forma on-line.
+          </p>
+
+          <dl class="facts facts--compact">
+            <div class="facts__row">
+              <dt>Endereço</dt>
+              <dd><span class="ph">[ENDEREÇO]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Cidade</dt>
+              <dd><span class="ph">[CIDADE/UF]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Horário</dt>
+              <dd><span class="ph">[DIAS E HORÁRIOS DE ATENDIMENTO]</span></dd>
+            </div>
+            <div class="facts__row">
+              <dt>Modalidades</dt>
+              <dd>Presencial (com agendamento) e on-line</dd>
+            </div>
+          </dl>
+
+          <a class="btn btn--outline-dark" href="#contato">Agendar atendimento</a>
+        </div>
+
+        <div class="local__map reveal">
+          <div class="map-placeholder" role="img"
+            aria-label="Espaço reservado para o mapa de localização do escritório">
+            <span class="map-placeholder__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s6.5-5.6 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="10.4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+            <p class="map-placeholder__title ph">[ENDEREÇO]</p>
+            <p class="map-placeholder__sub ph">[CIDADE/UF]</p>
+            <p class="map-placeholder__hint">
+              Espaço reservado para o mapa de localização. Será inserido quando o endereço real do
+              escritório for definido.
+            </p>
+          </div>
+
+          <!-- MODELO DO MAPA (substituir o bloco acima quando houver endereço real):
+
+          <iframe class="map-frame" src="[URL DO MAPA — Google Maps embed]"
+            title="Localização do escritório no mapa" width="100%" height="420"
+            style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+          -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CHAMADA FINAL (CTA)
+         Convite profissional ao contato — sem promessa de resultado, sem menção a
+         êxito, prêmio ou superioridade.
+         ======================================================================== -->
+    <section class="cta-final" id="agendar" aria-labelledby="cta-title">
+      <div class="container cta-final__inner">
+        <p class="eyebrow eyebrow--light eyebrow--center">
+          <span class="eyebrow__rule" aria-hidden="true"></span>Atendimento jurídico
+        </p>
+        <h2 class="cta-final__title" id="cta-title">
+          Precisa de orientação jurídica? O primeiro passo é conversar.
+        </h2>
+        <p class="cta-final__text">
+          Conte o que está acontecendo e receba uma orientação sobre as possibilidades e os
+          próximos passos do seu caso, com clareza e discrição.
+        </p>
+        <div class="cta-final__actions">
+          <a class="btn btn--gold btn--lg" href="#contato">
+            Falar com a advogada
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a class="btn btn--outline-light btn--lg" href="#areas">Ver áreas de atuação</a>
+        </div>
+        <p class="cta-final__meta ph">[OAB/UF 000000] · [CIDADE/UF]</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       RODAPÉ
+       SUBSTITUIR: nome do escritório, dados de contato e número da OAB.
+       O aviso sobre publicidade na advocacia pode ser mantido (é uma boa prática
+       de conformidade com o Código de Ética e Disciplina da OAB).
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="#inicio" aria-label="Voltar ao início">
+          <span class="brand__mark" aria-hidden="true">§</span>
+          <span class="brand__text">
+            <span class="brand__name">[NOME DA ADVOGADA]</span>
+            <span class="brand__role">Advocacia e Consultoria Jurídica</span>
+          </span>
+        </a>
+        <p class="site-footer__desc">
+          Atendimento jurídico com técnica, discrição e clareza em <span class="ph">[CIDADE/UF]</span>.
+          Atuação individualizada, conduzida em observância ao sigilo profissional.
+        </p>
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="footer-nav-title">
+        <h2 class="site-footer__title" id="footer-nav-title">Navegação</h2>
+        <ul class="site-footer__list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#areas">Áreas de Atuação</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#processo">Processo de Atendimento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col" aria-labelledby="footer-contact-title">
+        <h2 class="site-footer__title" id="footer-contact-title">Contato</h2>
+        <!-- SUBSTITUIR: canais reais de contato -->
+        <ul class="site-footer__list site-footer__list--ph">
+          <li><span class="ph">[WHATSAPP]</span></li>
+          <li><span class="ph">[E-MAIL]</span></li>
+          <li><span class="ph">[INSTAGRAM]</span></li>
+          <li><span class="ph">[ENDEREÇO] — [CIDADE/UF]</span></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col" aria-labelledby="footer-legal-title">
+        <h2 class="site-footer__title" id="footer-legal-title">Informações</h2>
+        <ul class="site-footer__list">
+          <!-- SUBSTITUIR: número de inscrição na OAB -->
+          <li><span class="ph">[OAB/UF 000000]</span></li>
+          <li><span class="ph">[DIAS E HORÁRIOS DE ATENDIMENTO]</span></li>
+        </ul>
+        <p class="site-footer__legal">
+          Este site tem caráter meramente informativo, em conformidade com o Código de Ética e
+          Disciplina da OAB e com o Provimento nº 205/2021 do Conselho Federal da OAB. Não
+          constitui oferta de serviços, captação de causas nem promessa de resultado.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="container site-footer__notice" role="note">
+      Projeto demonstrativo: os textos entre colchetes são marcadores de posição e serão
+      substituídos pelas informações reais da advogada.
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="container site-footer__bottom-inner">
+        <p>© <span data-year>2026</span> <span class="ph">[NOME DA ADVOGADA]</span>. Todos os direitos reservados.</p>
+        <p><a href="#inicio">Voltar ao início</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+       O número real ainda NÃO foi informado — por isso não existe link wa.me nem
+       telefone fictício. Basta preencher SITE_CONFIG.whatsappNumber em main.js
+       (seção 01) para que o botão passe a abrir a conversa automaticamente.
+       Enquanto não configurado, o botão conduz ao formulário/contato da página.
+       ========================================================================== -->
+  <a class="whatsapp-float" href="#contato" data-whatsapp-button
+    aria-label="Falar pelo WhatsApp (número ainda não configurado — abrir seção de contato)">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.9.53 3.68 1.46 5.2L2 22l5.1-1.6a9.8 9.8 0 0 0 4.94 1.33c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm4.5 11.96c-.24-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.16-.29.19-.53.06-.24-.12-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.38-1.72-.15-.24-.02-.38.1-.5.12-.13.28-.33.42-.49.14-.17.19-.28.28-.47.1-.19.05-.35-.02-.5-.06-.12-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38h-.48c-.16 0-.42.06-.64.3-.22.25-.83.82-.83 1.99 0 1.18.85 2.31.97 2.47.12.17 1.63 2.5 3.96 3.5.55.24.98.38 1.32.49.55.17 1.05.15 1.45.09.44-.07 1.35-.55 1.54-1.09.19-.53.19-.99.13-1.08-.06-.1-.22-.16-.46-.28Z"/>
+    </svg>
+    <span class="whatsapp-float__tip" data-whatsapp-tip>WhatsApp ainda não configurado</span>
+  </a>
+
+  <button class="to-top" type="button" data-to-top aria-label="Voltar ao topo" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

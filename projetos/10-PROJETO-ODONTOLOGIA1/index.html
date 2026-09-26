@@ -1,0 +1,163 @@
+/* =========================================================
+   CORREÇÃO DEFINITIVA — GRID DE PROJETOS AAS
+   ========================================================= */
+
+/*
+   Organiza todos os projetos em duas colunas no desktop,
+   eliminando espaços vazios entre os cards.
+*/
+
+.projects-grid,
+.projects-list,
+.projects-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+
+    align-items: start !important;
+}
+
+
+/* =========================================================
+   CASO OS CARDS ESTEJAM DIRETAMENTE NO CONTAINER
+   ========================================================= */
+
+.projects-section .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+
+/*
+   O título da seção deve ocupar a largura inteira.
+*/
+
+.projects-section .section-title,
+.projects-section .section-heading,
+.projects-section .projects-header {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.projects-section .project-card {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    align-self: start !important;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+
+/*
+   Remove posicionamentos especiais que possam estar
+   empurrando alguns cards para outras linhas/colunas.
+*/
+
+.projects-section .project-card:nth-child(n) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   PARTE VISUAL DO CARD
+   ========================================================= */
+
+.projects-section .project-visual {
+    width: 100%;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.projects-section .project-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/*
+   Mantém o botão alinhado na parte inferior
+   quando os textos possuem tamanhos diferentes.
+*/
+
+.projects-section .project-link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .projects-grid,
+    .projects-list,
+    .projects-container,
+    .projects-section .container {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .projects-grid,
+    .projects-list,
+    .projects-container,
+    .projects-section .container {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
+    }
+
+
+    .projects-section .section-title,
+    .projects-section .section-heading,
+    .projects-section .projects-header {
+
+        grid-column: 1 !important;
+    }
+
+
+    .projects-section .project-card {
+
+        width: 100% !important;
+
+        grid-column: 1 !important;
+    }
+
+}

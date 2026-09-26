@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-labelledby="phPortraitTitle phPortraitDesc">
+  <title id="phPortraitTitle">Espaço reservado para a fotografia profissional</title>
+  <desc id="phPortraitDesc">Marcador de posição. Substitua este arquivo pela fotografia profissional da advogada.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141F33"/>
+      <stop offset="1" stop-color="#080C14"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E0C48A"/>
+      <stop offset="1" stop-color="#8C6A2F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#C6A15B" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#C6A15B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#gold)" stroke-opacity=".16">
+    <path d="M0 742 C 200 682, 320 842, 520 782 S 800 722, 800 722"/>
+    <path d="M0 842 C 220 782, 340 942, 560 882 S 800 822, 800 822"/>
+    <path d="M0 642 C 180 582, 300 742, 500 682 S 800 622, 800 622"/>
+  </g>
+  <g fill="url(#gold)" opacity=".34">
+    <circle cx="400" cy="392" r="90"/>
+    <path d="M400 512c120 0 190 96 190 214v274H210V726c0-118 70-214 190-214z"/>
+  </g>
+  <rect x="24" y="24" width="752" height="952" fill="none" stroke="url(#gold)" stroke-opacity=".45" stroke-width="2"/>
+  <text x="400" y="896" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="32" letter-spacing="5" fill="#EAE5D9">[FOTOGRAFIA PROFISSIONAL]</text>
+  <text x="400" y="944" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="24" letter-spacing="4" fill="#B08D57">[NOME DA ADVOGADA]</text>
+</svg>
